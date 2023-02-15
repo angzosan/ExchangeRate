@@ -14,6 +14,13 @@ def printData(s,state):
         print()
     print(" ")
 
+def printResult(count,str):
+    if count % 2 == 0:
+        print(str, "Acceptable.")
+    else:
+        print(str, "Error.")
+
+
 
 
 
@@ -31,31 +38,19 @@ print("The final signal is : ", signal)
 printHeader('1.2')
 s = [int(x) for x in str(signal)]
 count = sum(s)
-if count % 2 == 0:
-    print("First Case (no error): Acceptable.")
-else:
-    print("First Case (no error): Error.")
-
+printResult(count,'First Case (no error) : ')
 if s[5] == 1:
     s[5] = 0
 else:
     s[5] = 1
 count = sum(s)
-if count % 2 == 0:
-    print("Second Case (one error):  Acceptable.")
-else:
-    print("Second Case (one error):  Error.")
-
+printResult(count,'Second Case (one error) : ')
 if s[11] == 1:
     s[11] = 0
 else:
     s[11] = 1
 count = sum(s)
-if count % 2 == 0:
-    print("Third Case (two errors):  Acceptable.")
-else:
-    print("Third Case (two errors):  Error.")
-
+printResult(count,'Third Case (two errors) : ')
 printHeader('1.3')
 # signal = input()
 signal = '1100111101110101110010101001'
@@ -106,10 +101,7 @@ while True:
     if j == 7:
         break
     j = j + 1
-if count % 2 == 0:
-    print("First Case (no error): Acceptable.")
-else:
-    print("First Case (no error): Error.")
+printResult(count,'First Case (no error) : ')
 j = 0
 count = 0
 if s[1][2] == '1':
@@ -126,11 +118,7 @@ while True:
     if j == 7:
         break
     j = j + 1
-if count % 2 == 0:
-    print("Second Case (one error):  Acceptable.")
-else:
-    print("Second Case (one error):  Error.")
-
+printResult(count,'Second Case (one error) : ')
 if s[1][4] == '1':
     s[1][4] = '0'
 else:
@@ -146,7 +134,4 @@ while True:
     if j == 7:
         break
     j = j + 1
-if count % 2 == 0:
-    print("Third Case (two errors):  Acceptable.")
-else:
-    print("Third Case (two errors):  Error.")
+printResult(count,'Third Case (two errors) : ')
