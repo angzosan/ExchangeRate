@@ -21,9 +21,9 @@ def printResult(count,str):
         print(str, "Error.")
 
 
-
-
-
+case1 = 'First Case (no error) : '
+case2 = 'Second Case (one error) : '
+case3 = 'Third Case (two errors) : '
 signal = '10001101011000'
 printHeader('1.1')
 s = [int(x) for x in str(signal)]
@@ -38,19 +38,19 @@ print("The final signal is : ", signal)
 printHeader('1.2')
 s = [int(x) for x in str(signal)]
 count = sum(s)
-printResult(count,'First Case (no error) : ')
+printResult(count,case1)
 if s[5] == 1:
     s[5] = 0
 else:
     s[5] = 1
 count = sum(s)
-printResult(count,'Second Case (one error) : ')
+printResult(count,case2)
 if s[11] == 1:
     s[11] = 0
 else:
     s[11] = 1
 count = sum(s)
-printResult(count,'Third Case (two errors) : ')
+printResult(count,case3)
 printHeader('1.3')
 # signal = input()
 signal = '1100111101110101110010101001'
@@ -101,7 +101,7 @@ while True:
     if j == 7:
         break
     j = j + 1
-printResult(count,'First Case (no error) : ')
+printResult(count,case1)
 j = 0
 count = 0
 if s[1][2] == '1':
@@ -118,7 +118,7 @@ while True:
     if j == 7:
         break
     j = j + 1
-printResult(count,'Second Case (one error) : ')
+printResult(count,case2)
 if s[1][4] == '1':
     s[1][4] = '0'
 else:
@@ -134,4 +134,4 @@ while True:
     if j == 7:
         break
     j = j + 1
-printResult(count,'Third Case (two errors) : ')
+printResult(count,case3)
